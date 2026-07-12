@@ -43,8 +43,14 @@
 			<option value="1.20.5">1.20.5-1.20.6</option>
 			<option value="1.21">1.21.0-1.21.4</option>
 			<option value="1.22">1.21.5</option>
-			<option value="1.21.6">1.21.6-1.21.7</option>
-			<option value="1.21.8">1.21.8+</option>
+			{#if $version === '1.21.8'}
+				<option value="1.21.6">1.21.6-1.21.7</option>
+				<option value="1.21.8">1.21.8</option>
+			{:else}
+				<option value="1.21.6">1.21.6-1.21.8</option>
+			{/if}
+			<option value="1.21.9">1.21.9</option>
+			<option value="26.1">26.1+</option>
 		</select>
 
 		<label id="bg-color-label" for="bg-color-input"> Preview Background Color: </label>

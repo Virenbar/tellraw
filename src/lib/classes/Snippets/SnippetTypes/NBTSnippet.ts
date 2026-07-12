@@ -15,6 +15,7 @@ export class NBTSnippet extends Snippet {
 	// type specifies
 	storage = '';
 	interpret = false;
+	plain = false;
 
 	constructor(id: string | null = null) {
 		super(id);
@@ -27,6 +28,7 @@ export class NBTSnippet extends Snippet {
 		newValue.storage = this.storage;
 		newValue.type = this.type;
 		newValue.interpret = this.interpret;
+		newValue.plain = this.plain;
 
 		copy_standard_attributes(this, newValue);
 

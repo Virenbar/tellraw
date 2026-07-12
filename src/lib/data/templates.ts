@@ -26,7 +26,9 @@ export enum FeatureType {
 	litSign,
 	linebreak,
 	atlasObject,
-	playerObject
+	playerObject,
+	nbtPlainAttribute,
+	objectFallbackAttribute
 }
 
 /**
@@ -82,7 +84,12 @@ export function isFeatureAvailable(
 	} else if (feature == FeatureType.linebreak) {
 		return commandType != CommandType.overlay;
 	} else if (feature == FeatureType.atlasObject || feature == FeatureType.playerObject) {
-		return commandType == CommandType.tellraw && versionAtLeast(version, '1.21.8');
+		return commandType == CommandType.tellraw && versionAtLeast(version, '1.21.9');
+	} else if (
+		feature == FeatureType.nbtPlainAttribute ||
+		feature == FeatureType.objectFallbackAttribute
+	) {
+		return versionAtLeast(version, '26.1');
 	} else {
 		return true;
 	}

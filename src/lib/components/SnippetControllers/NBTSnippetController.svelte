@@ -86,6 +86,17 @@
 			>
 				Interpret
 			</Checkbox>
+			{#if isFeatureAvailable($commandType, $version, FeatureType.nbtPlainAttribute)}
+				<Checkbox
+					checked={snippet.plain}
+					on:change={(event) => {
+						updateFieldValue('plain', event.detail);
+					}}
+				>
+					Plain
+				</Checkbox>
+				<p>Interpret & Plain should not be enabled at the same time.</p>
+			{/if}
 		</Col>
 	</Row>
 {/if}

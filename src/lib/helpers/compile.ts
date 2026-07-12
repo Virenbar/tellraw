@@ -54,6 +54,9 @@ function compile_section(
 			if (snippet.interpret) {
 				pending['interpret'] = snippet.interpret;
 			}
+			if (snippet.plain) {
+				pending['plain'] = snippet.plain;
+			}
 		} else if (snippet instanceof KeybindSnippet) {
 			pending['keybind'] = snippet.keybind;
 		} else if (snippet instanceof TranslateSnippet) {
